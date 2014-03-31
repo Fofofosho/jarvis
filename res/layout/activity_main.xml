@@ -36,6 +36,8 @@
 
             <ImageButton
                     android:id="@+id/image1"
+                    android:src="@drawable/weather_tile"
+                    android:onClick="onClick"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginLeft="40dp"
@@ -45,6 +47,7 @@
                     android:layout_column="0"/>
             <ImageButton
                     android:id="@+id/image2"
+                    android:src="@drawable/music_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
@@ -52,6 +55,7 @@
                     android:layout_column="1"/>
             <ImageButton
                     android:id="@+id/image3"
+                    android:src="@drawable/map_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
@@ -60,6 +64,7 @@
 
             <ImageButton
                     android:id="@id/image1"
+                    android:src="@drawable/map_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginLeft="40dp"
@@ -69,6 +74,7 @@
                     android:layout_column="0"/>
             <ImageButton
                     android:id="@id/image2"
+                    android:src="@drawable/weather_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
@@ -76,6 +82,7 @@
                     android:layout_column="1"/>
             <ImageButton
                     android:id="@id/image3"
+                    android:src="@drawable/music_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
@@ -84,6 +91,7 @@
 
             <ImageButton
                     android:id="@id/image1"
+                    android:src="@drawable/music_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginLeft="40dp"
@@ -93,6 +101,7 @@
                     android:layout_column="0"/>
             <ImageButton
                     android:id="@id/image2"
+                    android:src="@drawable/map_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
@@ -100,6 +109,7 @@
                     android:layout_column="1"/>
             <ImageButton
                     android:id="@id/image3"
+                    android:src="@drawable/weather_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
@@ -108,6 +118,7 @@
 
             <ImageButton
                     android:id="@id/image1"
+                    android:src="@drawable/music_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginLeft="40dp"
@@ -117,6 +128,7 @@
                     android:layout_column="0"/>
             <ImageButton
                     android:id="@id/image2"
+                    android:src="@drawable/weather_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
@@ -124,6 +136,7 @@
                     android:layout_column="1"/>
             <ImageButton
                     android:id="@id/image3"
+                    android:src="@drawable/map_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
@@ -132,6 +145,7 @@
 
             <ImageButton
                     android:id="@id/image1"
+                    android:src="@drawable/weather_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginLeft="40dp"
@@ -141,6 +155,7 @@
                     android:layout_column="0"/>
             <ImageButton
                     android:id="@id/image2"
+                    android:src="@drawable/map_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
@@ -148,6 +163,7 @@
                     android:layout_column="1"/>
             <ImageButton
                     android:id="@id/image3"
+                    android:src="@drawable/map_tile"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
