@@ -3,27 +3,20 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener{
-	
-	private Button button1;
-	private View MenuDetails;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		//initialize button
-		button1 = (Button)findViewById(R.id.button1);
-		button1.setOnClickListener(this);
-
-		
-		MenuDetails = (View)findViewById(R.id.listview_background_shape);
+		//initialize items
 
 	}
 
@@ -36,10 +29,6 @@ public class MainActivity extends Activity implements OnClickListener{
 
 	@Override
 	public void onClick(View v) {
-		if (v == button1){
-			MenuDetails.setVisibility(View.VISIBLE);
-			button1.setVisibility(View.INVISIBLE);
-		}
 		
 	}
 
