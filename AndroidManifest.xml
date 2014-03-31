@@ -23,6 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+                android:name="com.uXperience.jarvis.DisplayActivity"
+                android:label="Display"
+                android:screenOrientation="landscape"
+                android:launchMode="singleTask"/>
     </application>
 
 </manifest>
