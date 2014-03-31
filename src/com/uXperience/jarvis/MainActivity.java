@@ -1,15 +1,11 @@
 package com.uXperience.jarvis;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.view.View;
 
-public class MainActivity extends Activity implements OnClickListener{
+public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +23,9 @@ public class MainActivity extends Activity implements OnClickListener{
 		return true;
 	}
 
-	@Override
 	public void onClick(View v) {
-		
+		Intent intent = new Intent(this, DisplayActivity.class);
+        startActivityForResult(intent, CONTEXT_INCLUDE_CODE);
 	}
 
 }
