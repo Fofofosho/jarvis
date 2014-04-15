@@ -35,7 +35,7 @@
             android:rowCount="5">
 
             <ImageButton
-                    android:id="@+id/image1"
+                    android:id="@+id/weatherButton"
                     android:src="@drawable/weather_tile"
                     android:onClick="onClick"
                     android:layout_height="150dp"
@@ -46,129 +46,126 @@
                     android:layout_row="0"
                     android:layout_column="0"/>
             <ImageButton
-                    android:id="@+id/image2"
-                    android:src="@drawable/music_tile"
+                    android:id="@+id/mapButton"
+                    android:background="@drawable/map_tile"
+                    android:onClick="onClick"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
                     android:layout_row="0"
                     android:layout_column="1"/>
             <ImageButton
-                    android:id="@+id/image3"
-                    android:src="@drawable/map_tile"
+                    android:id="@+id/musicButton"
+                    android:background="@drawable/music_tile"
+                    android:onClick="onClick"
                     android:layout_height="150dp"
                     android:layout_width="150dp"
                     android:layout_marginRight="20dp"
                     android:layout_row="0"
                     android:layout_column="2"/>
 
-            <ImageButton
-                    android:id="@id/image1"
-                    android:src="@drawable/map_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_row="1"
-                    android:layout_column="0"/>
-            <ImageButton
-                    android:id="@id/image2"
-                    android:src="@drawable/weather_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_row="1"
-                    android:layout_column="1"/>
-            <ImageButton
-                    android:id="@id/image3"
-                    android:src="@drawable/music_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_row="1"
-                    android:layout_column="2"/>
+            <!--<ImageButton-->
+                    <!--android:id="@id/image2"-->
 
-            <ImageButton
-                    android:id="@id/image1"
-                    android:src="@drawable/music_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_row="2"
-                    android:layout_column="0"/>
-            <ImageButton
-                    android:id="@id/image2"
-                    android:src="@drawable/map_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_row="2"
-                    android:layout_column="1"/>
-            <ImageButton
-                    android:id="@id/image3"
-                    android:src="@drawable/weather_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_row="2"
-                    android:layout_column="2"/>
+                    <!--android:layout_row="1"-->
+                    <!--android:layout_column="0"/>-->
+            <!--<ImageButton-->
+                    <!--android:id="@id/image2"-->
+                    <!--android:src="@drawable/weather_tile"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_row="1"-->
+                    <!--android:layout_column="1"/>-->
+            <!--<ImageButton-->
+                    <!--android:id="@id/image3"-->
+                    <!--android:src="@drawable/music_tile"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_row="1"-->
+                    <!--android:layout_column="2"/>-->
 
-            <ImageButton
-                    android:id="@id/image1"
-                    android:src="@drawable/music_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_row="3"
-                    android:layout_column="0"/>
-            <ImageButton
-                    android:id="@id/image2"
-                    android:src="@drawable/weather_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_row="3"
-                    android:layout_column="1"/>
-            <ImageButton
-                    android:id="@id/image3"
-                    android:src="@drawable/map_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_row="3"
-                    android:layout_column="2"/>
+            <!--<ImageButton-->
+                    <!--android:id="@id/image1"-->
+                    <!--android:src="@drawable/music_tile"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--android:layout_row="2"-->
+                    <!--android:layout_column="0"/>-->
+            <!--<ImageButton-->
+                    <!--android:id="@id/image2"-->
+                    <!--android:src="@drawable/map_tile"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_row="2"-->
+                    <!--android:layout_column="1"/>-->
+            <!--<ImageButton-->
+                    <!--android:id="@id/image3"-->
+                    <!--android:src="@drawable/weather_tile"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_row="2"-->
+                    <!--android:layout_column="2"/>-->
 
-            <ImageButton
-                    android:id="@id/image1"
-                    android:src="@drawable/weather_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_row="4"
-                    android:layout_column="0"/>
-            <ImageButton
-                    android:id="@id/image2"
-                    android:src="@drawable/map_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_row="4"
-                    android:layout_column="1"/>
-            <ImageButton
-                    android:id="@id/image3"
-                    android:src="@drawable/map_tile"
-                    android:layout_height="150dp"
-                    android:layout_width="150dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_row="4"
-                    android:layout_column="2"/>
+            <!--<ImageButton-->
+                    <!--android:id="@id/image1"-->
+                    <!--android:src="@drawable/music_tile"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--android:layout_row="3"-->
+                    <!--android:layout_column="0"/>-->
+            <!--<ImageButton-->
+                    <!--android:id="@id/image2"-->
+                    <!--android:src="@drawable/weather_tile"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_row="3"-->
+                    <!--android:layout_column="1"/>-->
+            <!--<ImageButton-->
+                    <!--android:id="@id/image3"-->
+                    <!--android:src="@drawable/map_tile"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_row="3"-->
+                    <!--android:layout_column="2"/>-->
+
+            <!--<ImageButton-->
+                    <!--android:id="@id/image1"-->
+                    <!--android:src="@drawable/weather_tile"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_marginLeft="40dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_marginBottom="20dp"-->
+                    <!--android:layout_row="4"-->
+                    <!--android:layout_column="0"/>-->
+            <!--<ImageButton-->
+                    <!--android:id="@id/image2"-->
+                    <!--android:src="@drawable/map_tile"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_row="4"-->
+                    <!--android:layout_column="1"/>-->
+            <!--<ImageButton-->
+                    <!--android:id="@id/image3"-->
+                    <!--android:src="@drawable/map_tile"-->
+                    <!--android:layout_height="150dp"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_marginRight="20dp"-->
+                    <!--android:layout_row="4"-->
+                    <!--android:layout_column="2"/>-->
 
         </GridLayout>
     </ScrollView>
