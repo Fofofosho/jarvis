@@ -41,11 +41,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Intent intent = new Intent(this, WeatherActivity.class);
             startActivity(intent);
         } else if(v == musicBtn) {
-            Intent intent = new Intent(this, WeatherActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(this, WeatherActivity.class);
+//            startActivity(intent);
         } else if(v == mapsBtn) {
-            Intent intent = new Intent(this, WeatherActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(this, WeatherActivity.class);
+//            startActivity(intent);
         }
 
 	}
