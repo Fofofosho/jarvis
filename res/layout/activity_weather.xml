@@ -22,8 +22,7 @@
         <ImageButton
                 android:id="@+id/backButton"
                 android:src="@android:drawable/ic_menu_close_clear_cancel"
-                android:onClick="closeActivity"
-                android:alpha=".8"/>
+                android:alpha=".8" android:contentDescription="@string/exit_string" android:onClick="onClick"/>
 
         <!--<FrameLayout-->
                 <!--android:id="@+id/mainContent"-->

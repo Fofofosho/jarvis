@@ -5,6 +5,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.uXperience.jarvis.model.Weather;
@@ -14,15 +16,14 @@ import org.json.JSONException;
  * Created by Forrest on 4/14/2014.
  */
 
-public class WeatherActivity extends Activity {
+public class WeatherActivity extends Activity implements View.OnClickListener{
 
+    private ImageButton exitBtn;
     private TextView cityText;
     private TextView condDescr;
     private TextView temp;
     private TextView press;
     private TextView windSpeed;
-    private TextView windDeg;
-
     private TextView hum;
     private ImageView imgView;
 
@@ -31,6 +32,8 @@ public class WeatherActivity extends Activity {
         setContentView(R.layout.activity_weather);
 
         //initialize items
+        exitBtn = (ImageButton) findViewById(R.id.backButton);
+        exitBtn.setOnClickListener(this);
 
         String city = "Flagstaff,USA";
 
@@ -40,15 +43,22 @@ public class WeatherActivity extends Activity {
         hum = (TextView) findViewById(R.id.hum);
         press = (TextView) findViewById(R.id.press);
         windSpeed = (TextView) findViewById(R.id.windSpeed);
-        windDeg = (TextView) findViewById(R.id.windDeg);
         imgView = (ImageView) findViewById(R.id.condIcon);
 
         JSONWeatherTask task = new JSONWeatherTask();
         task.execute(new String[]{city});
     }
 
-    public void closeActivity() {
-        finish();
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == exitBtn) {
+            finish();
+        }
     }
 
     private class JSONWeatherTask extends AsyncTask<String, Void, Weather> {
