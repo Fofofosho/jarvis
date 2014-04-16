@@ -4,5 +4,6 @@
     <string name="app_name">jarvis</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="exit_string">exit</string>
 
 </resources>
