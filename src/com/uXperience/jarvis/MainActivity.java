@@ -2,6 +2,7 @@ package com.uXperience.jarvis;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -41,8 +42,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Intent intent = new Intent(this, WeatherActivity.class);
             startActivity(intent);
         } else if(v == musicBtn) {
-//            Intent intent = new Intent(this, WeatherActivity.class);
-//            startActivity(intent);
+            //This launches music app on phone. For me it launched Google Music,
+            //  which contained an album that I have on my phone
+            Intent intent = new Intent(MediaStore.INTENT_ACTION_MUSIC_PLAYER);
+            startActivity(intent);
         } else if(v == mapsBtn) {
 //            Intent intent = new Intent(this, WeatherActivity.class);
 //            startActivity(intent);
