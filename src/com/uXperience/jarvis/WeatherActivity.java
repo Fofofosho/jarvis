@@ -92,12 +92,10 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
 
             cityText.setText(weather.location.getCity() + "," + weather.location.getCountry());
             condDescr.setText(weather.currentCondition.getCondition() + "(" + weather.currentCondition.getDescr() + ")");
-            temp.setText("" + Math.round((weather.temperature.getTemp() - 273.15)) + "�C");
-            hum.setText("" + weather.currentCondition.getHumidity() + "%");
+            temp.setText("" + Math.round((weather.temperature.getTemp() - 273.15) * 1.8 + 32) + "F");
+            hum.setText("" + (weather.currentCondition.getHumidity() - 4) + "%");
             press.setText("" + weather.currentCondition.getPressure() + " hPa");
             windSpeed.setText("" + weather.wind.getSpeed() + " mps");
-            windDeg.setText("" + weather.wind.getDeg() + "�");
-
         }
     }
 }
