@@ -22,7 +22,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		
 		//initialize items
         cameraObject = getCameraInstance();
         showCamera = new ShowCamera(this, cameraObject);
