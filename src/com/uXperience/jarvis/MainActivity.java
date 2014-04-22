@@ -5,44 +5,29 @@ import android.content.Intent;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.SurfaceView;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
     private ImageButton weatherBtn;
     private ImageButton musicBtn;
     private ImageButton mapsBtn;
-    private SurfaceView sView;
     private Camera cameraObject;
     private ShowCamera showCamera;
-    private ImageView pic;
-
-    public static Camera isCameraAvailiable(){
-        Camera object = null;
-        try {
-           object = Camera.open(); 
-        }
-        catch (Exception e){
-        }
-        return object; 
-     }
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		pic = (ImageView)findViewById(R.id.imageView1);
-	      cameraObject = isCameraAvailiable();
-	      showCamera = new ShowCamera(this, cameraObject);
-	      FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
-	      preview.addView(showCamera);
+
 		
 		//initialize items
-
+        cameraObject = getCameraInstance();
+        showCamera = new ShowCamera(this, cameraObject);
+        FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
+        preview.addView(showCamera);
 
         weatherBtn = (ImageButton) findViewById(R.id.weatherButton);
         weatherBtn.setOnClickListener(this);
@@ -53,14 +38,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mapsBtn = (ImageButton) findViewById(R.id.mapButton);
         mapsBtn.setOnClickListener(this);
 
-
 	}
-
-
-
-
-    
-
 
 //	@Override
 //	public boolean onCreateOptionsMenu(Menu menu) {
@@ -86,5 +64,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
 
 	}
+
+    public static Camera getCameraInstance(){
+        Camera object = null;
+        try {
+            object = Camera.open();
+        }
+        catch (Exception e){
+        }
+        return object;
+    }
 
 }
