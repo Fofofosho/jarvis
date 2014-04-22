@@ -121,4 +121,11 @@
         </RelativeLayout>
 
     </GridLayout>
+    <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:visibility="invisible"
+            android:src="@drawable/ic_launcher" />
 </RelativeLayout>
