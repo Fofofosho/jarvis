@@ -9,6 +9,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -16,17 +17,32 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private ImageButton musicBtn;
     private ImageButton mapsBtn;
     private SurfaceView sView;
+    private Camera cameraObject;
+    private ShowCamera showCamera;
+    private ImageView pic;
 
-    private Camera hCamera;
-    private CameraPreview cPreview;
+    public static Camera isCameraAvailiable(){
+        Camera object = null;
+        try {
+           object = Camera.open(); 
+        }
+        catch (Exception e){
+        }
+        return object; 
+     }
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		pic = (ImageView)findViewById(R.id.imageView1);
+	      cameraObject = isCameraAvailiable();
+	      showCamera = new ShowCamera(this, cameraObject);
+	      FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
+	      preview.addView(showCamera);
 		
 		//initialize items
-        hCamera = getCameraInstance();
+
 
         weatherBtn = (ImageButton) findViewById(R.id.weatherButton);
         weatherBtn.setOnClickListener(this);
@@ -37,51 +53,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mapsBtn = (ImageButton) findViewById(R.id.mapButton);
         mapsBtn.setOnClickListener(this);
 
-        // Create our Preview view and set it as the content of our activity.
-        cPreview = new CameraPreview(this, hCamera);
-        FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
 
-        sView = (SurfaceView) findViewById(R.id.surfaceView);
-
-        cPreview.surfaceCreated(sView.getHolder());
-        preview.addView(cPreview);
 	}
 
-    private boolean safeCameraOpenInView(View view) {
-        boolean qOpened = false;
-        releaseCameraAndPreview();
-        hCamera = getCameraInstance();
-        qOpened = (hCamera != null);
-        cPreview = new CameraPreview(getActivity().getBaseContext(), hCamera);
-        FrameLayout preview = (FrameLayout) view.findViewById(R.id.camera_preview);
-        preview.addView(cPreview);
-        return qOpened;
-    }
 
-    private void releaseCameraAndPreview() {
 
-        if (hCamera != null) {
-            hCamera.stopPreview();
-            hCamera.release();
-            hCamera = null;
-        }
-        if(cPreview != null){
-            cPreview.destroyDrawingCache();
-            cPreview.hCamera = null;
-        }
-    }
+
     
-    /** A safe way to get an instance of the Camera object. */
-    public static Camera getCameraInstance(){
-        Camera c = null;
-        try {
-            c = Camera.open(); // attempt to get a Camera instance
-        }
-        catch (Exception e){
-            // Camera is not available (in use or does not exist)
-        }
-        return c; // returns null if camera is unavailable
-    }
+
 
 //	@Override
 //	public boolean onCreateOptionsMenu(Menu menu) {
@@ -102,8 +81,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Intent intent = new Intent(MediaStore.INTENT_ACTION_MUSIC_PLAYER);
             startActivity(intent);
         } else if(v == mapsBtn) {
-//            Intent intent = new Intent(this, WeatherActivity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(this, WeatherActivity.class);
+            startActivity(intent);
         }
 
 	}
