@@ -32,6 +32,10 @@
                 android:name="com.uXperience.jarvis.WeatherActivity"
                 android:label="Display"
                 android:screenOrientation="landscape"/>
+        <activity
+                android:name="com.uXperience.jarvis.MapActivity"
+                android:label="Display"
+                android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

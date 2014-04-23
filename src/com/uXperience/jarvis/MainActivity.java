@@ -58,7 +58,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Intent intent = new Intent(MediaStore.INTENT_ACTION_MUSIC_PLAYER);
             startActivity(intent);
         } else if(v == mapsBtn) {
-            Intent intent = new Intent(this, WeatherActivity.class);
+            Intent intent = new Intent(this, MapActivity.class);
             startActivity(intent);
         }
 
