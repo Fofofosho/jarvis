@@ -23,10 +23,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		setContentView(R.layout.activity_main);
 
 		//initialize items
-        cameraObject = getCameraInstance();
-        showCamera = new ShowCamera(this, cameraObject);
-        FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
-        preview.addView(showCamera);
+        if(cameraObject == null && showCamera == null)
+        {
+            cameraObject = getCameraInstance();
+            showCamera = new ShowCamera(this, cameraObject);
+            FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
+            preview.addView(showCamera);
+        }
+        else
+        {
+            cameraObject.unlock();
+        }
 
         weatherBtn = (ImageButton) findViewById(R.id.weatherButton);
         weatherBtn.setOnClickListener(this);
@@ -50,6 +57,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	public void onClick(View v) {
 
         if(v == weatherBtn) {
+            cameraObject.release();
             Intent intent = new Intent(this, WeatherActivity.class);
             startActivity(intent);
         } else if(v == musicBtn) {

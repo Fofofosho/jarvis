@@ -3,26 +3,16 @@ package com.uXperience.jarvis;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.hardware.Camera;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import com.uXperience.jarvis.model.Weather;
-
-import org.json.JSONException;
-
-import android.content.Intent;
-import android.hardware.Camera;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.SurfaceView;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+import com.uXperience.jarvis.model.Weather;
+import org.json.JSONException;
 
 /**
  * Created by Forrest on 4/14/2014.
@@ -38,34 +28,21 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
     private TextView windSpeed;
     private TextView hum;
     private ImageView imgView;
-    private SurfaceView sView;
     private Camera cameraObject;
     private ShowCamera showCamera;
-    private ImageView pic;
-    
-    public static Camera isCameraAvailiable(){
-        Camera object = null;
-        try {
-           object = Camera.open(); 
-        }
-        catch (Exception e){
-        }
-        return object; 
-     }
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
-        
-        /*
-        pic = (ImageView)findViewById(R.id.imageView1);
-	      cameraObject = isCameraAvailiable();
-	      showCamera = new ShowCamera(this, cameraObject);
-	      FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
-	      preview.addView(showCamera);
-*/
 
         //initialize items
+        cameraObject = getCameraInstance();
+        showCamera = new ShowCamera(this, cameraObject);
+        FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
+        preview.addView(showCamera);
+
+
         exitBtn = (ImageButton) findViewById(R.id.backButton);
         exitBtn.setOnClickListener(this);
 
@@ -93,6 +70,16 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
         if (v == exitBtn) {
             finish();
         }
+    }
+
+    public static Camera getCameraInstance(){
+        Camera object = null;
+        try {
+            object = Camera.open();
+        }
+        catch (Exception e){
+        }
+        return object;
     }
 
     private class JSONWeatherTask extends AsyncTask<String, Void, Weather> {
